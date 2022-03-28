@@ -25,9 +25,9 @@ document.querySelector("#form").addEventListener('submit', function(event) {
         pass.style.borderColor = "red";
         alert("Введите пароль");
         event.preventDefault();
-    } else if (log.value.length < 3) {
+    } else if (log.value.length < 5) {
         log.style.borderColor = "red";
-        alert("Адрес эл. почты должен содержать не менее 3 символов");
+        alert("Адрес эл. почты должен содержать не менее 5 символов");
         event.preventDefault();
     } else {
         let s = 0;
