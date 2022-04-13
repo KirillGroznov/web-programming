@@ -1,0 +1,58 @@
+<!DOCKTYPE html>
+<html lang="ru">
+
+<head>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+  <title>Авторизация</title>
+  <div id="check">
+    <input id="box" type="checkbox">
+    <label id="theme">Тёмная тема</label>
+  </div>
+</head>
+
+<body>
+<div>
+  <form method="post" id="form" action="/login">
+    <div>
+      <a href="file:///C:/Users/Professional/Desktop/web-programming/page.html">
+        <img width="425px"  src="https://thumb.tildacdn.com/tild3163-6662-4162-b362-646630336465/-/resize/460x/-/format/webp/fonbet-logo.png">
+      </a>
+    </div>
+    <div>
+      <label>Авторизация</label>
+    </div>
+    <table>
+      <tr>
+        <td>
+          <label>Адрес электронной почты:</label>
+        </td>
+        <td>
+          <input name='login' id="email" type="text" placeholder="эл. почта">
+        </td>
+      </tr>
+      <tr>
+        <td align="right">
+          <label>Пароль:</label>
+        </td>
+        <td>
+          <input name='pass' id="password" type="text" placeholder="пароль">
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="right">
+          <a href="public/page.html">
+            <label id="fail">Забыли логин или пароль?</label>
+          </a>
+        </td>
+      </tr>
+    </table>
+    <div>
+      <input id="auth" type="submit" value="Авторизоваться">
+    </div>
+  </form>
+</div>
+<script src="script.js"></script>
+</body>
+
+</html>
