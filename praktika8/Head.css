@@ -107,7 +107,7 @@ label {
     line-height: 20px;
 }
 
-#distance {
+#dist {
     position: absolute;
     width: 379px;
     height: 20px;
@@ -115,14 +115,20 @@ label {
     top: 184px;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
 }
 
-#km{
+.km{
     font-weight: 700;
+    font-size: 15px;
+    background: transparent;
+    border: transparent;
 }
 
-#moon {
+.moon {
     text-decoration-line: underline;
-}
+    font-size: 15px;
+    background: transparent;
+    border: transparent;
+} 
