@@ -41,7 +41,7 @@ label {
     height: 60px;
 }
 
-#asteroid1 {
+.asteroid1 {
     position: absolute;
     width: 71px;
     height: 72px;
@@ -49,14 +49,14 @@ label {
     top: 28px;
 }
 
-#asteroid2 {
+.asteroid2 {
     position: absolute;
     width: 218px;
     height: 118px;
     left: 43px;
 }
 
-#asteroid3 {
+.asteroid3 {
     position: absolute;
     width: 485px;
     height: 115px;
@@ -65,14 +65,14 @@ label {
 
 .name {
     position: absolute;
-    width: 94px;
+    width: 500px;
     height: 32px;
     left: 325px;
-    top: 24px;
+    top: 30px;
     font-style: normal;
     font-weight: 700;
     font-size: 22px;
-    line-height: 32px;
+    line-height: 30px;
     text-decoration-line: underline;
 }
 
@@ -138,7 +138,7 @@ label {
     margin: 0px 0px;
 }
 
-#rate11 {
+.rate11 {
     position: absolute;
     width: 80px;
     height: 20px;
