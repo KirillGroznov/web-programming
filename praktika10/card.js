@@ -3,8 +3,19 @@ import dino from "../assets/dino.png";
 import asteroid1 from "../assets/asteroid1.png";
 import asteroid2 from "../assets/asteroid2.png";
 import asteroid3 from "../assets/asteroid3.png";
+import {useContext} from "react";
+import {context} from "../App";
 
 export function Card (props) {
+    const {state, dispatch} = useContext(context);
+
+    function DestroyArray () {
+        dispatch({
+            payload: {name: props.name, date: props.date, distance: props.distance, size: props.size, grade: props.grade, units: state.units},
+            type: 'Destroy'
+        });
+    }
+
     return (
         <div className={styles.position}>
             <div className={props.grade==="не опасен"?styles.cardGreen:styles.cardRed}>
@@ -29,9 +40,9 @@ export function Card (props) {
                 <label className={styles.rate11}>Оценка:</label>
                 <label className={props.grade==="не опасен"?styles.rate1Green:styles.rate1Red}>{props.grade}</label>
                 <div className={styles.button}>
-                    <button className={styles.destroy}>На уничтожение</button>
+                    <button className={styles.destroy} onClick={DestroyArray}>На уничтожение</button>
                 </div>
             </div>
         </div>
     );
-} 
+}

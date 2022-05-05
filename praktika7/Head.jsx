@@ -1,4 +1,4 @@
-import '../praktika9/Head.css';
+import '../praktika10/Head.css';
 import {Link} from 'react-router-dom';
 
 export function Head () {
