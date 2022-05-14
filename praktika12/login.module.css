@@ -1,0 +1,20 @@
+.name {
+    display: flex;
+    justify-content: flex-end;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.text {
+    margin: 5px;
+}
+.checkbox {
+    margin: 5px;
+}
+.button {
+    margin: 5px;
+}
