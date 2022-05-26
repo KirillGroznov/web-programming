@@ -1,14 +1,10 @@
+import LoginStyles from "../Login.module.css";
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import LoginStyles from "./login.module.css";
-import { context } from "../../App";
-import { AsteroidsArray, Url } from "../API/API";
-import HeadStyles from "../Head.module.css";
+import { AsteroidsContext } from "../../../App";
+import { AsteroidsArray, Url } from "../../../Tools/API/API";
 
-export function Login() {
-    document.title = "Логин";
-
-    const { state, dispatch } = useContext(context);
+export const LoginForm = () => {
+    const { state, dispatch } = useContext(AsteroidsContext);
     const [name, setName] = useState(
         !window.localStorage.getItem("name")
             ? ""
@@ -60,14 +56,6 @@ export function Login() {
 
     return (
         <>
-            <div className={HeadStyles.choice}>
-                <Link to="/destroy" className={HeadStyles.destruction}>
-                    Уничтожение
-                </Link>
-                <Link to="/" className={HeadStyles.destruction}>
-                    Астероиды
-                </Link>
-            </div>
             <label className={LoginStyles.name}>
                 {key.valid ? name : "DEMO MODE"}
             </label>
@@ -100,4 +88,4 @@ export function Login() {
             </div>
         </>
     );
-}
+};
