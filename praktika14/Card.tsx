@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import styles from "./Card.module.css";
-import dino from "../assets/dino.png";
-import asteroid1 from "../assets/asteroid1.png";
-import asteroid2 from "../assets/asteroid2.png";
-import asteroid3 from "../assets/asteroid3.png";
-import { context } from "../App";
+import CardStyles from "./Card.module.css";
+import dino from "../Assets/dino.png";
+import asteroid1 from "../Assets/asteroid1.png";
+import asteroid2 from "../Assets/asteroid2.png";
+import asteroid3 from "../Assets/asteroid3.png";
+import { AsteroidsContext, PageContext } from "../App";
 
 export type Asteroid = {
     name: string;
@@ -14,10 +14,11 @@ export type Asteroid = {
     grade: "опасен" | "не опасен";
 };
 
-export function Card(props: Asteroid) {
-    const { state, dispatch } = useContext(context);
+export const Card = (props: Asteroid) => {
+    const asteroidsContext = useContext(AsteroidsContext);
+    const pageContext = useContext(PageContext);
 
-    function DestroyArray() {
+    const DestroyArray = () => {
         const data = {
             name: props.name,
             date: props.date,
@@ -25,75 +26,79 @@ export function Card(props: Asteroid) {
             size: props.size,
             grade: props.grade,
         };
-        dispatch({
-            payload: { ...state, destroy: [data] },
+        asteroidsContext.dispatch({
+            payload: { ...asteroidsContext.state, destroy: [data] },
             type: "Destroy",
         });
-    }
+    };
 
     return (
-        <div className={styles.position}>
+        <div className={CardStyles.position}>
             <div
                 className={
-                    props.grade === "не опасен" ? styles.cardGreen : styles.cardRed
+                    props.grade === "не опасен"
+                        ? CardStyles.cardGreen
+                        : CardStyles.cardRed
                 }
             >
-                <img className={styles.dino} src={dino} alt="Динозавр" />
+                <img className={CardStyles.dino} src={dino} alt="Динозавр" />
                 {props.size < 300 ? (
                     <img
-                        className={styles.asteroid1}
+                        className={CardStyles.asteroid1}
                         src={asteroid1}
                         alt="Маленький астероид"
                     />
                 ) : props.size < 600 ? (
                     <img
-                        className={styles.asteroid2}
+                        className={CardStyles.asteroid2}
                         src={asteroid2}
                         alt="Средний астероид"
                     />
                 ) : (
                     <img
-                        className={styles.asteroid3}
+                        className={CardStyles.asteroid3}
                         src={asteroid3}
                         alt="Большой астероид"
                     />
                 )}
-                <label className={styles.name}>{props.name}</label>
-                <label className={styles.description}>
-                    <label className={styles.date}>
+                <label className={CardStyles.name}>{props.name}</label>
+                <label className={CardStyles.description}>
+                    <label className={CardStyles.date}>
                         Дата..........................
                         {props.date}
                     </label>
-                    <label className={styles.size}>
+                    <label className={CardStyles.size}>
                         Размер...................................
                         {props.size.toFixed(2)} м
                     </label>
-                    {state.units === 0 ? (
-                        <label className={styles.distance}>
+                    {pageContext.state.units === 0 ? (
+                        <label className={CardStyles.distance}>
                             Расстояние.................
                             {props.distance.toFixed(2)} км
                         </label>
                     ) : (
-                        <label className={styles.distance}>
+                        <label className={CardStyles.distance}>
                             Расстояние.................
                             {(props.distance / 384400).toFixed(2)} лд
                         </label>
                     )}
                 </label>
-                <label className={styles.rate11}>Оценка:</label>
+                <label className={CardStyles.rate11}>Оценка:</label>
                 <label
                     className={
-                        props.grade === "не опасен" ? styles.rate1Green : styles.rate1Red
+                        props.grade === "не опасен"
+                            ? CardStyles.rate1Green
+                            : CardStyles.rate1Red
                     }
                 >
                     {props.grade}
                 </label>
-                <div className={styles.button}>
-                    <button className={styles.destroy} onClick={DestroyArray}>
+                <div className={CardStyles.button}>
+                    <button className={CardStyles.destroy} onClick={DestroyArray}>
                         На уничтожение
                     </button>
                 </div>
             </div>
         </div>
     );
-}
+};

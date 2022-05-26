@@ -1,0 +1,88 @@
+label {
+    font-family: "Helvetica";
+}
+
+.position {
+    height: 215px;
+    position: relative;
+    left: 15px;
+}
+
+.title {
+    position: absolute;
+    width: 299px;
+    height: 48px;
+    left: 206px;
+    top: 37px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 48px;
+}
+
+.description {
+    position: absolute;
+    width: 414px;
+    height: 40px;
+    left: 206px;
+    top: 93px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.choice {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    position: absolute;
+    width: 217px;
+    height: 20px;
+    right: 295px;
+    top: 53px;
+}
+
+.asteroids {
+    position: static;
+    width: 90px;
+    height: 20px;
+    left: 0px;
+    top: 0px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 24px;
+}
+
+.destruction {
+    position: static;
+    width: 103px;
+    height: 20px;
+    left: 114px;
+    top: 0px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    text-decoration-line: underline;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 24px;
+}
+
+.rectangle {
+    position: absolute;
+    width: 920px;
+    height: 1px;
+    left: 203px;
+    top: 157px;
+    background: #000000;
+}
